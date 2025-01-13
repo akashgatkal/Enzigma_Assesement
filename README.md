@@ -1,4 +1,4 @@
-### **Selenium Automation for NoKodr Platform**  
+# **Selenium Automation for NoKodr Platform**  
 
 ## **Navigate To URL**: https://app-staging.nokodr.com/  
 
