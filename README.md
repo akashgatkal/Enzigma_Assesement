@@ -1,10 +1,10 @@
-###**Selenium Automation for NoKodr Platform**  
+### **Selenium Automation for NoKodr Platform**  
 
-##**Navigate To URL**: https://app-staging.nokodr.com/  
+## **Navigate To URL**: https://app-staging.nokodr.com/  
 
-##**Overview:**   This project automates the Signup, Login, and Forgot Password functionalities of the NoKodr platform using Selenium WebDriver with Java.
+## **Overview:**   This project automates the Signup, Login, and Forgot Password functionalities of the NoKodr platform using Selenium WebDriver with Java.
   
-##**Features:**  
+## **Features:**  
   
 Automates form validation for Signup, Login, and Forgot Password pages.  
 
