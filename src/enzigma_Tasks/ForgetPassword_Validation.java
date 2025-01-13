@@ -33,9 +33,10 @@ public class ForgetPassword_Validation extends BaseClass {
 		postCondition();
 		preCondition();
 		// Validate email format.
+		System.out.println("To Validate email format:  ");
 		driver.findElement(By.linkText("Forgot Password?")).click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement email_Field = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='messageInputTag']/div/div/abx-email/input")));
+		WebElement email_Field = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@id='messageInputTag']/div/div/abx-email/input)[2]")));
 		
 		email_Field.sendKeys("akashgatkal123@gmail.com");
 		Thread.sleep(1000);
@@ -52,7 +53,7 @@ public class ForgetPassword_Validation extends BaseClass {
 		// Provide a registered email
 		System.out.println("for check a registered email: ");
 		driver.findElement(By.linkText("Forgot Password?")).click();
-		driver.findElement(By.xpath("//div[@id='messageInputTag']/div/div/abx-email/input")).sendKeys("akashgatkal123@gmail.com");
+		driver.findElement(By.xpath("(//div[@id='messageInputTag']/div/div/abx-email/input)[2]")).sendKeys("akashgatkal123@gmail.com");
 		driver.findElement(By.xpath("//div[@title='Proceed']")).click();
 		String reg_email = driver.findElement(By.xpath("//div[@class='content-margin']")).getText();
 		String Email1 = "Please enter a valid email";
@@ -64,11 +65,13 @@ public class ForgetPassword_Validation extends BaseClass {
 		}
 		postCondition();
 
+		
+		preCondition();
 		// non-registered email
 		System.out.println("for check a non-registered email: ");
-		preCondition();
+		
 		driver.findElement(By.linkText("Forgot Password?")).click();
-		driver.findElement(By.xpath("//div[@id='messageInputTag']/div/div/abx-email/input")).sendKeys("akashgatkal1234@gmail.com");
+		driver.findElement(By.xpath("(//div[@id='messageInputTag']/div/div/abx-email/input)[2]")).sendKeys("akashgatkal1234@gmail.com");
 		driver.findElement(By.xpath("//div[@title='Proceed']")).click();
 		String email3 = driver.findElement(By.xpath("//div[@class='content-margin']")).getText();
 		if (email3.contains("User does not exists")) {
@@ -79,33 +82,35 @@ public class ForgetPassword_Validation extends BaseClass {
 		// close the browser
 		postCondition();
 
+		preCondition();
 		// Invalid email format.
 		System.out.println("For Invalid email format.: ");
-		preCondition();
+		
 		driver.findElement(By.linkText("Forgot Password?")).click();
-		driver.findElement(By.xpath("//div[@id='messageInputTag']/div/div/abx-email/input")).sendKeys("akashgatkal123gmail.com");
+		driver.findElement(By.xpath("(//div[@id='messageInputTag']/div/div/abx-email/input)[2]")).sendKeys("akashgatkal123gmail.com");
 		driver.findElement(By.xpath("//div[@title='Proceed']")).click();
 		String invalid_email = driver.findElement(By.xpath("//div[@class='content-margin']")).getText();
 		if (invalid_email.contains("Invalid email format")) {
-			System.out.println("email is Invalid");
-		} else {
 			System.out.println("email is valid");
+		} else {
+			System.out.println("email is Invalid");
 		}
 		// close the browser
 		postCondition();
 
-		// Blank email field
-		System.out.println("For Blank email field: ");
 		
 		
 		preCondition();
+		// Blank email field
+		System.out.println("For Blank email field: ");
+	
 		driver.findElement(By.linkText("Forgot Password?")).click();
 		driver.findElement(By.xpath("//div[@title='Proceed']")).click();
 		String blank_email = driver.findElement(By.xpath("//div[@class='content-margin']")).getText();
 		if (invalid_email.contains("Please enter email")) {
-			System.out.println("email is field is blank");
+			System.out.println("email field is blank");
 		} else {
-			System.out.println("email is not blank");
+			System.out.println("email field is not blank");
 		}
 		// close the browser
 		postCondition();

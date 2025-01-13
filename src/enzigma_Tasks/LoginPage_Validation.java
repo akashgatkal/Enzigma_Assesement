@@ -32,7 +32,7 @@ public class LoginPage_Validation extends BaseClass {
 		System.out.println("Ensure password meets length/format requirements:     ");
 		
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("akashgatkal123@gmail.com");
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Akash@2001");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Akash@001");
 		driver.findElement(By.xpath("//div[@title='Log In']")).click();
 		String e_password = driver.findElement(By.xpath("//div[@class='content-margin']")).getText();
 		if (e_password.contains("Invalid Email or Password")) {
@@ -71,7 +71,7 @@ public class LoginPage_Validation extends BaseClass {
 		preCondition();
 		// Blank fields
 		
-		System.out.println("Blank fields");
+		System.out.println("For Blank fields: ");
 		
 		driver.findElement(By.xpath("//div[@title='Log In']")).click();
 		String actual_blank_email = driver.findElement(By.xpath("//div[@class='content-margin']")).getText();

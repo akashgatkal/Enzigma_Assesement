@@ -16,7 +16,7 @@ public class BaseClass {
 	}
 	public static void signUp()
 	{
-		driver.findElement(By.xpath("(//input[@class='slds-input ng-untouched ng-pristine ng-valid'])[3]")).sendKeys("akashgatkal123@gmail.com");
+		driver.findElement(By.xpath("(//input[@class='slds-input ng-untouched ng-pristine ng-valid'])[3]")).sendKeys("gatkalakash2001@gmail.com");
 		driver.findElement(By.className("slds-checkbox__label")).click();
 		driver.findElement(By.xpath("//div[@class='slds-col slds-size_1-of-1']")).click();
 		
