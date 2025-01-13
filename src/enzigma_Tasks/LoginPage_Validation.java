@@ -12,7 +12,8 @@ public class LoginPage_Validation extends BaseClass {
 		preCondition();
 
 		// Check for mandatory fields (username and password)
-		System.out.println("");
+		System.out.println("Check for mandatory fields (username and password):   ");
+		
 		WebElement email = driver.findElement(By.xpath("//input[@name='username']"));
 		String validEmail = email.getText();
 		if (validEmail.isEmpty()) {
@@ -28,6 +29,8 @@ public class LoginPage_Validation extends BaseClass {
 			System.out.println("password is not mandatory");
 		}
 		// Ensure password meets length/format requirements
+		System.out.println("Ensure password meets length/format requirements:     ");
+		
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("akashgatkal123@gmail.com");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Akash@2001");
 		driver.findElement(By.xpath("//div[@title='Log In']")).click();
@@ -40,7 +43,10 @@ public class LoginPage_Validation extends BaseClass {
 
 		postCondition();
 		preCondition();
+		
 		// Correct username and password
+		System.out.println("For Correct username and password: ");
+		
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("akashgatkal123@gmail.com");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Akash@2001");
 		driver.findElement(By.xpath("//div[@title='Log In']")).click();
@@ -48,6 +54,8 @@ public class LoginPage_Validation extends BaseClass {
 		postCondition();
 		preCondition();
 		// incorrect username and password
+		System.out.println("For incorrect username and password: ");
+		
 		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("akashgatkal123@gmail.com");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("agas@2002");
 		driver.findElement(By.xpath("//div[@title='Log In']")).click();
@@ -62,6 +70,7 @@ public class LoginPage_Validation extends BaseClass {
 		
 		preCondition();
 		// Blank fields
+		
 		System.out.println("Blank fields");
 		
 		driver.findElement(By.xpath("//div[@title='Log In']")).click();
